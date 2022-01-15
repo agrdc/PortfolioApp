@@ -5,9 +5,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
 abstract class BaseActivity<GeneratedBindClass : ViewDataBinding> : AppCompatActivity() {
-    protected lateinit var dataBinding: GeneratedBindClass
+    protected lateinit var binding: GeneratedBindClass
 
     protected fun bindView(layoutId: Int) {
-        dataBinding = DataBindingUtil.setContentView(this, layoutId)
+        binding = DataBindingUtil.setContentView(this, layoutId)
     }
 }
