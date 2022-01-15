@@ -2,10 +2,15 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
     compileSdk 31
+
+    dataBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "br.com.portfolioapp"
@@ -33,13 +38,18 @@ android {
 }
 
 dependencies {
+    //Lifecycle Extensions
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.4.0'
+    //Kotlin Extensions
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.activity:activity-ktx:1.4.0'
+    implementation 'androidx.fragment:fragment-ktx:1.4.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     //Gson
     implementation 'com.google.code.gson:gson:2.8.9'
-    //Kotlin
-    implementation 'androidx.core:core-ktx:1.7.0'
     //Material
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
