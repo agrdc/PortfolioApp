@@ -38,8 +38,6 @@ android {
 }
 
 dependencies {
-    //Lifecycle Extensions
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.4.0'
     //Kotlin Extensions
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
     implementation 'androidx.activity:activity-ktx:1.4.0'
@@ -53,6 +51,8 @@ dependencies {
     //Material
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
+    //Splash Screen Api
+    implementation "androidx.core:core-splashscreen:1.0.0-alpha02"
     //Tests
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
