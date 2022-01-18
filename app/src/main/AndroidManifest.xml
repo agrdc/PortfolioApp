@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CustomSplashScreen">
         <activity
-            android:name=".ui.view.onboarding.OnboardingActivity"
+            android:name=".ui.view.onboarding.activity.OnboardingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

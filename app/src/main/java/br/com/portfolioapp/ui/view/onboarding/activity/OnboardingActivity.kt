@@ -1,4 +1,4 @@
-package br.com.portfolioapp.ui.view.onboarding
+package br.com.portfolioapp.ui.view.onboarding.activity
 
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
