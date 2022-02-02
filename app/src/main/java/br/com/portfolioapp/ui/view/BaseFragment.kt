@@ -8,7 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
 abstract class BaseFragment<GeneratedBindClass : ViewDataBinding> : Fragment() {
-    protected lateinit var binding: GeneratedBindClass
+    lateinit var binding: GeneratedBindClass
 
     protected fun bindView(
         inflater: LayoutInflater,
