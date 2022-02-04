@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PortfolioApp</string>
     <string name="lets_go">Vamos lá!</string>
+    <string name="name_question">Primeiro, como gostaria de ser chamado(a)?</string>
 </resources>

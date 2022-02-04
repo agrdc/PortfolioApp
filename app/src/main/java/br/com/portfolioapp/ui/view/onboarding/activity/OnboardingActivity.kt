@@ -10,6 +10,7 @@ class OnboardingActivity : BaseActivity<ActivityOnboardingBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+        supportActionBar?.hide()
         bindView(R.layout.activity_onboarding)
     }
 }
