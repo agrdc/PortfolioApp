@@ -3,4 +3,5 @@
     <dimen name="size_button">56dp</dimen>
     <dimen name="default_margin">16dp</dimen>
     <dimen name="small_margin">12dp</dimen>
+    <dimen name="font_small">15sp</dimen>
 </resources>
