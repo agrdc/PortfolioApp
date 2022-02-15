@@ -1,5 +1,7 @@
 package br.com.portfolioapp.domain.usecase
 
-class ValidateEmptyFieldUsecase {
-
+class ValidateTextUsecase {
+    fun validateTextEmpty(text: String?) : Boolean {
+        return text.isNullOrEmpty()
+    }
 }

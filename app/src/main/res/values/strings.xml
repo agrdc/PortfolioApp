@@ -4,4 +4,5 @@
     <string name="understood">Entendido</string>
     <string name="name_question">Primeiro, como gostaria de ser chamado(a)?</string>
     <string name="disclaimer">Essa informação será salva no banco de dados SQLite interno do app, e será persistida em todo novo acesso. Caso desejar isso poderá ser desfeito limpando a sessão dentro do app.</string>
+    <string name="validation_empty_error">O campo deve ser preenchido!</string>
 </resources>

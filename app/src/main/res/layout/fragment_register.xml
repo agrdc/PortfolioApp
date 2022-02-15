@@ -37,42 +37,50 @@
                 app:layout_constraintStart_toStartOf="@id/vertical_guideline_5"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_margin"
-                android:imeOptions="actionDone"
-                android:inputType="textCapWords|textPersonName"
-                android:lines="1"
-                android:theme="@style/AutoSizeEditText"
                 app:layout_constraintEnd_toStartOf="@id/vertical_guideline_95"
                 app:layout_constraintStart_toStartOf="@id/vertical_guideline_5"
-                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+                app:layout_constraintTop_toBottomOf="@id/tv_name">
+
+                <br.com.portfolioapp.ui.view.custom.KeySensitiveEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapWords|textPersonName"
+                    android:lines="1"
+                    android:theme="@style/AutoSizeEditText" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/tv_disclaimer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
                 android:text="@string/disclaimer"
                 android:textSize="@dimen/font_small"
-                android:layout_marginTop="@dimen/default_margin"
-                app:layout_constraintStart_toEndOf="@id/vertical_guideline_5"
                 app:layout_constraintEnd_toStartOf="@id/vertical_guideline_95"
-                app:layout_constraintTop_toBottomOf="@id/et_name"/>
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline_5"
+                app:layout_constraintTop_toBottomOf="@id/til_name" />
 
             <Button
                 android:id="@+id/btn_understood"
+                style="@style/DefaultButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/understood"
-                style="@style/DefaultButton"
-                android:enabled="false"
                 android:layout_marginVertical="@dimen/default_margin"
+                android:enabled="false"
+                android:text="@string/understood"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_disclaimer"
                 app:layout_constraintEnd_toStartOf="@id/vertical_guideline_95"
                 app:layout_constraintStart_toStartOf="@id/vertical_guideline_5"
+                app:layout_constraintTop_toBottomOf="@id/tv_disclaimer"
                 app:layout_constraintVertical_bias="1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
