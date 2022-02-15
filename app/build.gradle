@@ -45,8 +45,14 @@ android {
 }
 
 dependencies {
+    // Koin main features for Android
+    implementation "io.insert-koin:koin-android:3.1.5"
+    // Java Compatibility
+    implementation "io.insert-koin:koin-android-compat:3.1.5"
+    // Koin for JUnit 4
+    testImplementation "io.insert-koin:koin-test-junit4:3.1.5"
     //Kotlin Extensions
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
     implementation 'androidx.activity:activity-ktx:1.4.0'
     implementation 'androidx.fragment:fragment-ktx:1.4.1'
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -60,16 +66,16 @@ dependencies {
     implementation 'com.google.android.material:material:1.5.0'
     //Splash Screen Api
     implementation "androidx.core:core-splashscreen:1.0.0-beta01"
-    //Navigation Java language implementation
-    implementation("androidx.navigation:navigation-fragment:2.4.0")
-    implementation("androidx.navigation:navigation-ui:2.4.0")
+    //Navigation Java implementation
+    implementation("androidx.navigation:navigation-fragment:2.4.1")
+    implementation("androidx.navigation:navigation-ui:2.4.1")
     //Navigation Kotlin implementation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.4.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.4.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
     //Navigation feature module support
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.0")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.1")
     //Navigation testing
-    androidTestImplementation("androidx.navigation:navigation-testing:2.4.0")
+    androidTestImplementation("androidx.navigation:navigation-testing:2.4.1")
     //Tests
     androidTestImplementation 'junit:junit:4.13.2'
     // To use the JUnit Extension APIs
