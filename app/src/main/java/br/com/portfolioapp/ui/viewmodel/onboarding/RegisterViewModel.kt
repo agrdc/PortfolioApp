@@ -5,8 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import br.com.portfolioapp.R
 import br.com.portfolioapp.domain.usecase.ValidateTextUsecase
 import br.com.portfolioapp.ui.viewmodel.BaseViewModel
+import org.koin.java.KoinJavaComponent.inject
 
-class RegisterViewModel(app: Application, private val validateTextUsecase: ValidateTextUsecase) : BaseViewModel(app) {
+class RegisterViewModel(app: Application) : BaseViewModel(app) {
+
+    private val validateTextUsecase: ValidateTextUsecase by inject(ValidateTextUsecase::class.java)
     val validationErrorLiveData = MutableLiveData<String?>()
 
     fun validateField(text: String) {
