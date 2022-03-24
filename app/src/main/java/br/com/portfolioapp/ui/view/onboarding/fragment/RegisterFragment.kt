@@ -32,21 +32,24 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
     }
 
     private fun observeLiveDatas() {
-        viewModel.validationErrorLiveData.observe(viewLifecycleOwner, { error ->
+        viewModel.validationErrorLiveData.observe(viewLifecycleOwner) { error ->
             binding.tilName.error = error
             binding.btnUnderstood.isEnabled = viewModel.handleButtonEnabled(error)
-        })
+        }
     }
 
     private fun setupListeners() {
         binding.etName.backActionListener = {
             viewModel.validateField(binding.etName.text.toString())
         }
-        binding.etName.setOnEditorActionListener { view, actionId, keyEvent ->
+        binding.etName.setOnEditorActionListener { _, actionId, keyEvent ->
             if (keyEvent?.keyCode == KeyEvent.FLAG_EDITOR_ACTION || actionId == EditorInfo.IME_ACTION_DONE) {
                 viewModel.validateField(binding.etName.text.toString())
             }
             false
+        }
+        binding.btnUnderstood.setOnClickListener {
+            viewModel.saveUsername(binding.etName.text.toString())
         }
     }
 }

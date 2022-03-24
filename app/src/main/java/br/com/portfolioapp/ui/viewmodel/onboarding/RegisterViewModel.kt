@@ -2,25 +2,31 @@ package br.com.portfolioapp.ui.viewmodel.onboarding
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import br.com.portfolioapp.R
+import androidx.lifecycle.viewModelScope
+import br.com.portfolioapp.domain.usecase.SaveUserUsecase
 import br.com.portfolioapp.domain.usecase.ValidateTextUsecase
 import br.com.portfolioapp.ui.viewmodel.BaseViewModel
+import kotlinx.coroutines.launch
 import org.koin.java.KoinJavaComponent.inject
 
 class RegisterViewModel(app: Application) : BaseViewModel(app) {
 
     private val validateTextUsecase: ValidateTextUsecase by inject(ValidateTextUsecase::class.java)
+    private val saveUserUsecase: SaveUserUsecase by inject(SaveUserUsecase::class.java)
+
     val validationErrorLiveData = MutableLiveData<String?>()
 
     fun validateField(text: String) {
-        if (validateTextUsecase.validateTextEmpty(text)) {
-            validationErrorLiveData.value = app.getString(R.string.validation_empty_error)
-        } else {
-            validationErrorLiveData.value = null
-        }
+        validationErrorLiveData.value = validateTextUsecase.getEmptyFieldValidationMessage(text)
     }
 
     fun handleButtonEnabled(error: String?) : Boolean {
-        return validateTextUsecase.validateTextEmpty(error)
+        return validateTextUsecase.validateEmptyText(error)
+    }
+
+    fun saveUsername(name: String) {
+        viewModelScope.launch {
+            saveUserUsecase.saveUser(name)
+        }
     }
 }

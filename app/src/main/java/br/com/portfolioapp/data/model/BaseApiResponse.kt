@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-open class BaseApiResponse (
- @SerializedName("error_message") val errorMessage: String?
-) : Parcelable
+open class BaseApiResponse: Parcelable {
+ @SerializedName("error_message") var errorMessage: String? = null
+}

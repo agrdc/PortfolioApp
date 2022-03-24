@@ -1,6 +1,11 @@
 package br.com.portfolioapp.helper
 
 import android.app.Application
+import br.com.portfolioapp.R
+import br.com.portfolioapp.data.datasource.UserLocalDataSource
+import br.com.portfolioapp.data.db.UserDatabaseManager
+import br.com.portfolioapp.data.repository.UserRepository
+import br.com.portfolioapp.domain.usecase.SaveUserUsecase
 import br.com.portfolioapp.domain.usecase.ValidateTextUsecase
 import br.com.portfolioapp.ui.viewmodel.onboarding.RegisterViewModel
 import org.koin.android.ext.koin.androidContext
@@ -36,7 +41,11 @@ class KoinHelper {
 
         fun getKoinRegisterModule(): Module {
             return module {
-                factory { ValidateTextUsecase() }
+                factory { ValidateTextUsecase(androidContext().getString(R.string.validation_empty_error)) }
+                factory { SaveUserUsecase(get()) }
+                factory { UserRepository(get()) }
+                factory { UserLocalDataSource(get()) }
+                single { UserDatabaseManager(androidContext()) }
                 viewModel { RegisterViewModel(get()) }
             }
         }

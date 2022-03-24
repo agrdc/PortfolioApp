@@ -27,8 +27,12 @@ class RegisterViewModelTest : KoinTest {
         val emptyField = ""
         registerViewModel.validateField(emptyField)
         registerViewModel.validationErrorLiveData.observeOnce {
+            //Test error is not null
             Assert.assertNotNull(it)
+            //Test error is not empty
             Assert.assertNotEquals("", it)
+            //Test button is not enabled
+            Assert.assertFalse(registerViewModel.handleButtonEnabled(it))
         }
     }
 
@@ -37,7 +41,10 @@ class RegisterViewModelTest : KoinTest {
         val validField = "Jorge"
         registerViewModel.validateField(validField)
         registerViewModel.validationErrorLiveData.observeOnce {
+            //Test error is null
             Assert.assertNull(it)
+            //Test button is enabled
+            Assert.assertTrue(registerViewModel.handleButtonEnabled(it))
         }
     }
 }
